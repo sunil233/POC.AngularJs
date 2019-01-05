@@ -1,0 +1,53 @@
+﻿<div class="container-fluid" ng-controller="RegisterController as reg" cg-busy="reg.Registerpromise">
+    <form name="reg.RegistrationForm" ng-submit="reg.register()" role="form" novalidate class="form-validate" >
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <h2>Register</h2>
+                <div class="form-group" ng-class="{ 'has-error': RegistrationRegistrationForm.FirstName.$dirty && RegistrationRegistrationForm.FirstName.$error.required }">
+                    <label for="username">First name</label>
+                    <input type="text" name="FirstName" id="FirstName" class="form-control" ng-model="reg.FirstName" required />
+                    <span ng-show="reg.RegistrationForm.FirstName.$dirty && reg.RegistrationForm.FirstName.$error.required" class="text-danger">First name is required</span>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': RegistrationForm.LastName.$dirty && RegistrationForm.LastName.$error.required }">
+                    <label for="username">Last name</label>
+                    <input type="text" name="LastName" id="LastName" class="form-control" ng-model="reg.LastName" required />
+                    <span ng-show="reg.RegistrationForm.LastName.$dirty && reg.RegistrationForm.LastName.$error.required" class="text-danger">Last name is required</span>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': RegistrationForm.Username.$dirty && RegistrationForm.Username.$error.required }">
+                    <label for="username">Username</label>
+                    <input type="text" name="Username" id="Username" class="form-control" ng-model="reg.Username" required />
+                    <span ng-show="reg.RegistrationForm.Username.$dirty && reg.RegistrationForm.Username.$error.required" class="text-danger">Username is required</span>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': reg.RegistrationForm.Password.$dirty && reg.RegistrationForm.Password.$error.required }">
+                    <label for="password">Password</label>
+                    <input type="password" name="Password" id="Password" class="form-control" ng-model="reg.Password" required />
+                    <span ng-show="reg.RegistrationForm.Password.$dirty && reg.RegistrationForm.Password.$error.required" class="text-danger">Password is required</span>
+                </div>
+                <div class="form-group">
+                    <div class="controls">
+                        <label class="text-muted">DOB</label>
+                        <div ng-controller="DatepickerDemoCtrl as dpick" class="form-group">
+                            <p class="input-group">
+                                <input type="text" name="account_DOB" required="" datepicker-popup="MM/dd/yyyy" ng-model="reg.DOB" is-open="dpick.opened" datepicker-options="dpick.dateOptions" close-text="Close" class="form-control" />
+                                <span class="input-group-btn">
+                                    <button type="button" ng-click="dpick.open($event)" class="btn btn-default">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </button>
+                                </span>
+                            </p>
+                            <span ng-show="reg.RegistrationForm.account_DOB.$dirty && reg.RegistrationForm.account_DOB.$error.required" class="text-danger">Please Select Date of Birth</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-success">Register</button>
+                    <a ui-sref="page.default" href="" class="btn btn-primary">Cancel</a>
+                </div>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A30554E8-62C7-4412-B5EE-FF5923AF418D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AngularJSWorkShopApplication</RootNamespace>
+    <AssemblyName>AngularJSWorkShop</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\UserDetails.cs" />
+    <Compile Include="ViewModels\Products.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\img\addtocart.png" />
+    <Content Include="assets\img\products\apl.jpg" />
+    <Content Include="assets\img\products\avc.jpg" />
+    <Content Include="assets\img\products\ban.jpg" />
+    <Content Include="assets\img\products\ctp.jpg" />
+    <Content Include="assets\img\products\fig.jpg" />
+    <Content Include="assets\img\products\grf.jpg" />
+    <Content Include="assets\img\products\grp.jpg" />
+    <Content Include="assets\img\products\gua.jpg" />
+    <Content Include="assets\img\products\kiw.jpg" />
+    <Content Include="assets\img\products\lyc.jpg" />
+    <Content Include="assets\img\products\man.jpg" />
+    <Content Include="assets\img\products\org.jpg" />
+    <Content Include="assets\img\products\pap.jpg" />
+    <Content Include="assets\img\products\pch.jpg" />
+    <Content Include="assets\img\products\per.jpg" />
+    <Content Include="assets\img\products\pmg.jpg" />
+    <Content Include="assets\img\products\pnp.jpg" />
+    <Content Include="assets\img\products\psm.jpg" />
+    <Content Include="assets\img\products\str.jpg" />
+    <Content Include="assets\img\products\tng.jpg" />
+    <Content Include="assets\img\products\wml.jpg" />
+    <Content Include="dataModels\products.json" />
+    <Content Include="dataModels\questionsModel.json" />
+    <Content Include="pages\error.html" />
+    <Content Include="pages\default.html" />
+    <Content Include="pages\login.html" />
+    <Content Include="pages\page.html" />
+    <Content Include="pages\register.html" />
+    <Content Include="scripts\core.bootstrapui.js" />
+    <Content Include="scripts\QuestionController.js" />
+    <Content Include="scripts\CartSummaryController.js" />
+    <Content Include="scripts\StoreController.js" />
+    <Content Include="scripts\ProductsController.js" />
+    <Content Include="scripts\EventsController.js" />
+    <Content Include="scripts\DataBindingController.js" />
+    <Content Include="scripts\validateController.js" />
+    <Content Include="scripts\InventoryController.js" />
+    <Content Include="scripts\RegisterController.js" />
+    <Content Include="services\register.service.js" />
+    <Content Include="services\myDataService.js" />
+    <Content Include="vendor\angular-file-upload\angular-file-upload.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="index.html" />
+    <Content Include="vendor\angular-busy\angular-busy.css" />
+    <Content Include="vendor\angular-busy\angular-busy.js" />
+    <Content Include="vendor\angular-busy\angular-busy.min.css" />
+    <Content Include="vendor\angular-busy\angular-busy.min.js" />
+    <Content Include="scripts\app.js" />
+    <Content Include="directives\inventory-product\inventoryproduct.html" />
+    <Content Include="directives\inventory-product\inventoryproduct.js" />
+    <Content Include="vendor\jquery-ui\jquery-ui.min.js" />
+    <Content Include="vendor\jquery-ui\ui\accordion.js" />
+    <Content Include="vendor\jquery-ui\ui\autocomplete.js" />
+    <Content Include="vendor\jquery-ui\ui\button.js" />
+    <Content Include="vendor\jquery-ui\ui\core.js" />
+    <Content Include="vendor\jquery-ui\ui\datepicker.js" />
+    <Content Include="vendor\jquery-ui\ui\dialog.js" />
+    <Content Include="vendor\jquery-ui\ui\draggable.js" />
+    <Content Include="vendor\jquery-ui\ui\droppable.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-blind.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-bounce.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-clip.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-drop.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-explode.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-fade.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-fold.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-highlight.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-puff.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-pulsate.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-scale.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-shake.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-size.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-slide.js" />
+    <Content Include="vendor\jquery-ui\ui\effect-transfer.js" />
+    <Content Include="vendor\jquery-ui\ui\effect.js" />
+    <Content Include="vendor\jquery-ui\ui\menu.js" />
+    <Content Include="vendor\jquery-ui\ui\mouse.js" />
+    <Content Include="vendor\jquery-ui\ui\position.js" />
+    <Content Include="vendor\jquery-ui\ui\progressbar.js" />
+    <Content Include="vendor\jquery-ui\ui\resizable.js" />
+    <Content Include="vendor\jquery-ui\ui\selectable.js" />
+    <Content Include="vendor\jquery-ui\ui\selectmenu.js" />
+    <Content Include="vendor\jquery-ui\ui\slider.js" />
+    <Content Include="vendor\jquery-ui\ui\sortable.js" />
+    <Content Include="vendor\jquery-ui\ui\spinner.js" />
+    <Content Include="vendor\jquery-ui\ui\tabs.js" />
+    <Content Include="vendor\jquery-ui\ui\tooltip.js" />
+    <Content Include="vendor\jquery-ui\ui\widget.js" />
+    <Content Include="vendor\moment\min\moment-with-locales.min.js" />
+    <Content Include="version.txt" />
+    <Content Include="views\app.html" />
+    <Content Include="views\databinding.html" />
+    <Content Include="views\questiontemplate.html" />
+    <Content Include="views\events.html" />
+    <Content Include="views\promises.html" />
+    <Content Include="views\inventory.html" />
+    <Content Include="views\myvalidations.html" />
+    <Content Include="views\partials\footer.html" />
+    <Content Include="views\shoppingCart.html" />
+    <Content Include="views\store.html" />
+    <Content Include="views\topics.html" />
+    <Content Include="views\products.html" />
+    <Content Include="views\partials\header.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="vendor\angular-busy\angular-busy.min.js.map" />
+    <Content Include="vendor\fonts\fontawesome-webfont.eot" />
+    <Content Include="vendor\fonts\fontawesome-webfont.ttf" />
+    <Content Include="vendor\fonts\fontawesome-webfont.woff" />
+    <Content Include="vendor\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="vendor\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="vendor\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>11385</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:11385/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

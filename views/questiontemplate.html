@@ -1,0 +1,117 @@
+<form class="form-horizontal" ng-controller="QuestionCtrl as questions" name="questions.EditForm" role="form" novalidate="" ng-init="myForm.$data = {}" ng-submit="questions.SubmitFormData();" >
+    <div class="container-fluid" cg-busy="questions.Questionspromise">
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8 text-center">
+                <h4>{{questions.FormName}} &nbsp;&nbsp;({{questions.FormCode}})</h4>
+            </div>
+
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <table style="width:100%">
+                    <tr ng-repeat-start="q in questions.QuestionsList">
+                        <td><span ng-if="q.ControlType !='CheckBox'"><b>{{ q.questiontext }}</b></span></td>
+                    </tr>
+                    <tr ng-repeat-end>
+                        <td>
+                            <!-- TEXT BOX -->
+                            <div ng-if="q.ControlType =='TextBox'" class="col-md-12">
+                                <input class="form-control" name="{{q.name}}" id="txt_{{q.questioncode}}" ng-model="myForm.$data[q.questioncode]" ng-required="{{q.required}}">
+                                <p ng-show="questions.EditForm[q.name].$invalid && questions.EditForm[q.name].$dirty && questions.EditForm[q.name].$error.required" class="text-danger">Field is required.</p>
+                            </div>
+                            <!-- TEXT AREA -->
+                            <div ng-if="q.ControlType =='textarea'" class="col-md-12">
+                                <textarea rows="6" cols="40" class="form-control" name="{{q.name}}" id="txt_{{q.questioncode}}" ng-model="myForm.$data[q.questioncode]" ng-required="{{q.required}}"></textarea>
+                                <p ng-show="questions.EditForm[q.name].$invalid && questions.EditForm[q.name].$dirty && questions.EditForm[q.name].$error.required" class="text-danger">Field is required.</p>
+                            </div>
+                            <!-- DROPDOWN -->
+                            <div class="col-md-12 form-inline" ng-if="q.ControlType =='DropDown'">
+                                <select class="form-control" name="{{q.name}}" ng-model="myForm.$data[q.questioncode]" ng-required="{{q.required}}">
+                                    <option selected value="">--Select--</option>
+                                    <option ng-repeat="option in q.options" value="{{ option.value }}" ng-selected="myForm.$data[q.questioncode] ==option.value"> {{ option.text || option.value }} </option>
+                                </select>
+                                <p ng-show="questions.EditForm[q.name].$invalid && questions.EditForm[q.name].$dirty && questions.EditForm[q.name].$error.required" class="text-danger">Field is required.</p>
+                            </div>
+                            <!-- RADIO BUTTON -->
+                            <div class="col-md-12 radio c-radio c-radio-nofont" ng-if="q.ControlType =='RadioButton'" style="margin-right:0px;">
+                                <label ng-repeat="option in q.options">
+                                    &nbsp;&nbsp;
+                                    <input type="radio" name="grp_{{q.questioncode}}" value="{{ option.value }}" ng-model="myForm.$data[q.questioncode]" ng-required="{{q.required}}"> <span></span>{{option.text || option.value}}
+                                </label>
+                                <p ng-show="questions.EditForm[q.name].$invalid && questions.EditForm[q.name].$dirty && questions.EditForm[q.name].$error.required" class="text-danger">Field is required.</p>
+                            </div>
+                            <!-- RADIO BUTTON LIST -->
+                            <div class="col-md-12 radio c-radio c-radio-nofont" ng-if="q.ControlType =='RadioButtonList'" style="margin-right:0px;">
+                                <label ng-repeat="option in q.options" class="col-xs-3">
+                                    &nbsp;&nbsp;
+                                    <input type="radio" name="grp_{{q.questioncode}}" value="{{ option.value }}" ng-model="myForm.$data[q.questioncode]"> <span></span>{{option.text || option.value}}
+                                </label>
+                            </div>
+                            <!-- CHECK BOX -->
+                            <div ng-if="q.ControlType =='CheckBox'" class="col-md-12">
+                                <label>
+                                    <input type="checkbox" name="{{q.name}}" value="{{myForm.$data[q.questioncode]}}" ng-model="myForm.$data[q.questioncode]" class="needsclick ng-dirty ng-valid-parse ng-touched ng-empty ng-invalid ng-invalid-required">
+                                    <span class="fa fa-check">&nbsp; &nbsp;</span><b>{{q.questiontext}}</b>
+                                </label>
+                            </div>
+                            <!-- CHECK BOX LIST -->
+                            <div ng-if="q.ControlType =='CheckBoxList'">
+                                <label ng-repeat="option in q.options" class="col-xs-4">
+                                    <input name="{{q.name}}" class="ng-pristine ng-valid" type="checkbox" value="1" ng-model="myForm.$data[q.questioncode][option.value]">
+                                    <span class="fa fa-check">&nbsp; &nbsp;</span>{{option.text}}
+                                </label>
+                            </div>
+                            <!-- DATE PICKER -->
+                            <div ng-if="q.ControlType =='datepicker'" class="controls col-md-3">
+                                <div ng-controller="DatepickerDemoCtrl as dpick" class="form-group">
+                                    <p class="input-group">
+                                        <input type="text" name="{{q.name}}" id="dt_{{q.questioncode}}" ng-required="{{q.required}}" ng-model="myForm.$data[q.questioncode]" datepicker-popup="MM/dd/yyyy" ng-model="reg.DOB" is-open="dpick.opened" datepicker-options="dpick.dateOptions" close-text="Close" class="form-control" />
+                                        <span class="input-group-btn">
+                                            <button type="button" ng-click="dpick.open($event)" class="btn btn-default">
+                                                <i class="glyphicon glyphicon-calendar"></i>
+                                            </button>
+                                        </span>
+                                    </p>
+                                    <p ng-show="questions.EditForm[q.name].$invalid && questions.EditForm[q.name].$dirty && questions.EditForm[q.name].$error.required" class="text-danger">Field is required.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <button type="submit" class="btn btn-success pull-right">Submit</button>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</form>

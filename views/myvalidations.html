@@ -1,0 +1,119 @@
+<div class="form-horizontal"  ng-controller="ProductsController as pc">
+    <div class="container-fluid">
+        <form role="form" name="pc.ProductsForm" novalidate class="form-validate">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>AngularJS monitors the state of the form and input fields (input, textarea, select), and lets you notify the user about the current state.</p>
+                    <p> AngularJS also holds information about whether they have been touched, or modified, or not.</p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Input fields have the following states:</div>
+                        <div class="panel-body">
+                            <p>
+                                <b>$untouched:</b>  The field has not been touched yet
+                            </p>
+                            <p>
+                                <b>$touched:</b> The field has been touched
+                            </p>
+                            <p>
+                                <b>$pristine:</b> The field has not been modified yet
+                            </p>
+                            <a href="myvalidations.html">myvalidations.html</a>
+                            <p>
+                                <b>$dirty:</b> The field has been modified
+                            </p>
+                            <p>
+                                <b>$invalid:</b> The field content is not valid
+                            </p>
+                            <p>
+                                <b>$valid:</b> The field content is valid
+                            </p>
+                            <p>
+                                They are all properties of the input field, and are either true or false.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Forms have the following states:</div>
+                        <div class="panel-body">
+                            <p> <b>$pristine:</b> No fields have been modified yet</p>
+                            <p><b>$dirty:</b> One or more have been modified</p>
+                            <p><b>$invalid :</b>The form content is not valid</p>
+                            <p><b>$valid:</b> The form content is valid</p>
+                            <p><b>$submitted :</b>The form is submitted</p>
+                            <p>
+                                &nbsp;
+                            </p>
+                            <p>
+                                &nbsp;
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br />          
+
+            <div class="form-group" ng-class="{ 'has-error' : pc.ProductsForm.ProductName.$dirty &&  pc.ProductsForm.ProductName.$error.required}">
+                <label class="control-label col-sm-2">Product Name:</label>
+                <div class="col-sm-6">
+                    <input type="text" name="ProductName" placeholder="Enter Product Name" autocomplete="off" ng-model="pc.ProductName" ng-required="true" class="form-control">
+                    <p ng-show="pc.ProductsForm.ProductName.$dirty && pc.ProductsForm.ProductName.$error.required" class="text-danger">Product Name is required.</p>
+                </div>
+                <div class="col-sm-6">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : pc.ProductsForm.ProductCode.$dirty &&  pc.ProductsForm.ProductCode.$error.required}">
+                <label class="control-label col-sm-2">Product Code:</label>
+                <div class="col-sm-6">
+                    <input type="text" name="ProductCode" placeholder="Enter Name" ng-model="pc.ProductCode" ng-required="true" class="form-control">
+                    <p ng-show="pc.ProductsForm.ProductCode.$dirty && pc.ProductsForm.ProductCode.$error.required" class="text-danger">Product Code is required.</p>
+                </div>
+                <div class="col-sm-6">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : pc.ProductsForm.txtPrice.$dirty &&  pc.ProductsForm.txtPrice.$error.required}">
+                <label class="control-label col-sm-2">Price:</label>
+                <div class="col-sm-6">
+                    <input type="text" name="txtPrice" placeholder="Enter Price" ng-model="pc.Price" ng-required="true" class="form-control">
+                    <p ng-show="pc.ProductsForm.txtPrice.$dirty && pc.ProductsForm.txtPrice.$error.required" class="text-danger">Price is required.</p>
+                </div>
+                <div class="col-sm-6">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : pc.ProductsForm.txtQuantity.$dirty &&  pc.ProductsForm.txtQuantity.$error.required}">
+                <label class="control-label col-sm-2">Quantity:</label>
+                <div class="col-sm-6">
+                    <input type="text" name="txtQuantity" placeholder="Enter Quantity" ng-model="pc.Quantity" ng-required="true" class="form-control">
+                    <p ng-show="pc.ProductsForm.txtQuantity.$dirty && pc.ProductsForm.txtQuantity.$error.required" class="text-danger">Quantity is required.</p>
+
+                </div>
+                <div class="col-sm-6">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-1">
+
+                </div>
+                <div class="col-sm-11">
+                    <input type="Button" value="Add to list" ng-click="pc.addProduct()" class="btn btn-success" />
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+

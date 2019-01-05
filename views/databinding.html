@@ -1,0 +1,33 @@
+<div ng-controller="DataBindingController as dbcontroller">
+    <div class="row">
+        <div class="form-group">
+            <label class="control-label col-sm-2">First Name:</label>
+            <div class="col-sm-6">
+                <input type="text" ng-model="dbcontroller.firstName" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <label class="control-label col-sm-2">Last Name:</label>
+            <div class="col-sm-6">
+                <input type="text" ng-model="dbcontroller.lastName" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <label class="control-label col-sm-2">Full Name:</label>
+            <div class="col-sm-6">
+               <span ng-bind-template="{{dbcontroller.firstName}}-{{dbcontroller.lastName}}"></span>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="POC Angular JS">
+    <meta name="fragment" content="!" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10;IE=9; IE=8; IE=7; IE=EDGE" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <title>POC Angular JS</title>
+    <base href="/">
+    <script type="text/javascript">
+        var jsfileVersion = 0; var currentDate = new Date();
+        var qs = currentDate.getFullYear() + '' + currentDate.getMonth() + '' + currentDate.getDate() + '' + currentDate.getHours() + '' + currentDate.getMinutes() + '' + currentDate.getSeconds();
+        function Xhr() {
+            try { return new XMLHttpRequest(); } catch (e) { } try { return new ActiveXObject("Msxml3.XMLHTTP"); } catch (e) { } try { return new ActiveXObject("Msxml2.XMLHTTP.6.0"); } catch (e) { } try { return new ActiveXObject("Msxml2.XMLHTTP.3.0"); } catch (e) { } try { return new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) { } try { return new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) { } return null;
+        }
+        var httpRequest = Xhr();
+        httpRequest.open('GET', 'version.txt?q=' + qs);
+        httpRequest.send();
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                jsfileVersion = httpRequest.responseText.trim();
+            }
+        };
+        function loadStyles(array, callback) {
+            var loader = function (src, handler) {
+                var link = document.createElement("link");
+                link.type = 'text/css';
+                link.rel = 'stylesheet';
+                link.href = src + '?v=' + jsfileVersion;
+                link.onload = link.onreadystatechange = function () {
+                    link.onreadystatechange = link.onload = null;
+                    handler();
+                }
+                var head = document.getElementsByTagName("head")[0];
+                (head || document.body).appendChild(link);
+            };
+
+            (function run() {
+                if (array.length != 0) {
+                    loader(array.shift(), run);
+                } else {
+                    callback && callback();
+                }
+            })();
+        }
+        function loadScripts(array, callback) {
+            var loader = function (src, handler) {
+                var script = document.createElement("script");
+                script.src = src + '?v=' + jsfileVersion;
+                script.onload = script.onreadystatechange = function () {
+                    script.onreadystatechange = script.onload = null;
+                    handler();
+                }
+                var head = document.getElementsByTagName("head")[0];
+                (head || document.body).appendChild(script);
+            };
+            (function run() {
+                if (array.length != 0) {
+                    loader(array.shift(), run);
+                } else {
+                    callback && callback();
+                }
+            })();
+        }
+    </script>
+    <script type="text/javascript">
+        loadStyles([
+            "http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", "assets/css/main.css"
+        ], function () {
+            console.log('styles are loaded');
+        });
+    </script>
+</head>
+<body>
+    <div data-ui-view="" data-autoscroll="false" class="wrapper"></div>
+    <script type="text/javascript">
+        //TO DO:merge all the below scripts into single file and load the file
+        loadScripts([
+            "https://code.jquery.com/jquery-1.11.3.min.js",
+            "https://code.jquery.com/ui/1.11.3/jquery-ui.min.js",
+            "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/oclazyload/1.1.0/ocLazyLoad.min.js",
+            "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js",
+            "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js",
+            "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-cookies.min.js",
+            "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.min.js",
+            "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js",
+            "https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js",
+            "scripts/app.js"
+        ], function () {
+            console.log('scripts loaded');
+        });
+    </script>
+</body>
+</html>

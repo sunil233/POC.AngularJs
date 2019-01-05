@@ -1,0 +1,22 @@
+﻿[
+         
+       { "ProductCode":"BAN", "ProductName":"Banana", "Description":"These are rich in Potassium and easy to peel.", "Price":4 ,"Quantity":1  },
+       {"ProductCode":"CTP", "ProductName":"Cantaloupe", "Description":"Delicious and refreshing.", "Price":3 ,"Quantity":1 },
+       {"ProductCode":"FIG", "ProductName":"Fig", "Description":"OK, not that nutritious, but sooo good!", "Price":10 ,"Quantity":1 },
+       {"ProductCode":"GRF", "ProductName":"Grapefruit", "Description":"Pink or red, always healthy and delicious.", "Price":11 ,"Quantity":1 },
+       {"ProductCode":"GRP", "ProductName":"Grape", "Description":"Wine is great, but grapes are even better.","Price": 8 ,"Quantity":1 },
+       {"ProductCode":"GUA", "ProductName":"Guava", "Description":"Exotic, fragrant, tasty!", "Price":8  ,"Quantity":1},
+       {"ProductCode":"KIW", "ProductName":"Kiwi", "Description":"These come from New Zealand.", "Price":14 ,"Quantity":1 },
+       {"ProductCode":"LYC", "ProductName":"Lychee", "Description":"Unusual and highly addictive!", "Price":18  ,"Quantity":1},
+       {"ProductCode":"MAN", "ProductName":"Mango", "Description":"Messy to eat, but well worth it.", "Price":8 ,"Quantity":1 },
+       {"ProductCode":"ORG", "ProductName":"Orange", "Description":"Vitamin C anyone? Go ahead, make some juice.", "Price":9 ,"Quantity":1 },
+       {"ProductCode":"PAP", "ProductName":"Papaya", "Description":"Super-popular for breakfast.", "Price":5  ,"Quantity":1},
+       {"ProductCode":"PCH", "ProductName":"Peach", "Description":"Add some cream and enjoy.", "Price":19  ,"Quantity":1},
+       {"ProductCode":"PER", "ProductName":"Pear", "Description":"Delicious fresh, or cooked in red wine, or distilled.", "Price":8 ,"Quantity":1 },
+       {"ProductCode":"PMG", "ProductName":"Pomegranate", "Description":"Delicious, healthy, beautiful, and sophisticated!", "Price":19  ,"Quantity":1},
+       {"ProductCode":"PNP", "ProductName":"Pineapple", "Description":"Enjoy it (but don't forget to peel first).", "Price":4 ,"Quantity":1 },
+       {"ProductCode":"PSM", "ProductName":"Persimmon", "Description":"Believe it or not, they are berries!", "Price":6 ,"Quantity":1 },
+       {"ProductCode":"TNG", "ProductName":"Tangerine", "Description":"Easier to peel than oranges!", "Price":8 ,"Quantity":1 },
+       {"ProductCode":"WML", "ProductName":"Watermelon", "Description":"Nothing comes close on those hot summer days.", "Price":4  ,"Quantity":1}
+
+]

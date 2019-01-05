@@ -1,0 +1,33 @@
+<div class="container" ng-controller="RegisterController as reg">
+    <form name="form" ng-submit="reg.login()" role="form">
+        <div class="row" cg-busy="reg.loginpromise">
+            <div class="col-lg-12 col-md-12">
+                <div class="login-panel">
+                    <div class="logindiv">
+                        <div class="panel-heading" style="background-color:rgba(255, 144, 43, 0); padding-bottom:0;">
+                        </div>
+                        <div class="panel-body" style="padding-top:0;">
+                            <p class="text-center control-label loginTextColor">Login to Your Account</p>
+
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" class="form-control" id="username" ng-model="reg.username">
+                                <div class="error">
+                                    <div>Username is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control" id="pwd" ng-model="reg.password">
+                                <div class="error">
+                                    <div>Password is required</div>
+                                </div>
+                            </div>
+                            <button type="submit" ng-disabled="form.$invalid || reg.dataLoading" class="btn btn-primary">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

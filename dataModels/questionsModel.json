@@ -1,0 +1,206 @@
+﻿[
+  {
+    "Id": "1",
+    "name": "question1",
+    "questioncode": "Q1",
+    "ControlType": "TextBox",
+    "required": true,
+    "questiontext": "Name of the Applicant?"
+  },
+  {
+    "Id": "2",
+    "name": "question2",
+    "questioncode": "Q2",
+    "ControlType": "DropDown",
+    "required": true,
+    "questiontext": "marital status?",
+    "options": [
+      {
+        "value": "1",
+        "text": "Single"
+      },
+      {
+        "value": "2",
+        "text": "Married"
+      },
+      {
+        "value": "3",
+        "text": "Divorced"
+      }
+    ],
+    "value": "1"
+  },
+  {
+    "Id": "3",
+    "name": "question3",
+    "questioncode": "Q3",
+    "ControlType": "RadioButton",
+    "required": true,
+    "questiontext": "Applicant  gender?",
+    "options": [
+      {
+        "value": "1",
+        "text": "Male"
+      },
+      {
+        "value": "2",
+        "text": "Female"
+      }
+
+    ],
+    "value": "1"
+  },
+  {
+    "Id": "4",
+    "name": "question4",
+    "questioncode": "Q4",
+    "ControlType": "RadioButtonList",
+    "required": true,
+    "questiontext": "Which State do you belong?",
+    "options": [
+      {
+        "value": "1",
+        "text": "New Jersey"
+      },
+      {
+        "value": "2",
+        "text": "New York"
+      },
+      {
+        "value": "3",
+        "text": "Washington"
+      },
+      {
+        "value": "4",
+        "text": "Alabama"
+      },
+      {
+        "value": "5",
+        "text": "Alaska"
+      },
+      {
+        "value": "6",
+        "text": "Arizona"
+      },
+      {
+        "value": "7",
+        "text": "Delaware"
+      },
+      {
+        "value": "8",
+        "text": "Florida"
+      },
+      {
+        "value": "9",
+        "text": "Georgia"
+      },
+      {
+        "value": "10",
+        "text": "Hawaii"
+      },
+      {
+        "value": "11",
+        "text": "Indiana"
+      },
+      {
+        "value": "12",
+        "text": "Nebraska"
+      },
+      {
+        "value": "13",
+        "text": "North Carolina"
+      },
+      {
+        "value": "14",
+        "text": "North Dakota"
+      }
+    ],
+    "value": "1"
+  },
+  {
+    "Id": "5",
+    "name": "question5",
+    "questioncode": "Q5",
+    "ControlType": "CheckBox",
+    "required": true,
+    "questiontext": "Do you live in Camp Hill?"
+  },
+  {
+    "Id": "6",
+    "name": "question6",
+    "questioncode": "Q6",
+    "ControlType": "CheckBoxList",
+    "questiontext": "What is your favourite book",
+    "options": [
+      {
+        "value": "1",
+        "text": "An Evil Cradling"
+      },
+      {
+        "value": "2",
+        "text": "As I Lay Dying"
+      },
+      {
+        "value": "3",
+        "text": "Behold the Man"
+      },
+      {
+        "value": "4",
+        "text": "Blue Remembered Hills"
+      },
+      {
+        "value": "5",
+        "text": "The Children of Men"
+      },
+      {
+        "value": "6",
+        "text": "The Daffodil Sky"
+      },
+      {
+        "value": "7",
+        "text": "Dying of the Light"
+      },
+      {
+        "value": "8",
+        "text": "The Golden Apples of the Sun"
+      },
+      {
+        "value": "9",
+        "text": "Have His Carcase"
+      },
+      {
+        "value": "10",
+        "text": "The House of Mirth"
+      },
+      {
+        "value": "11",
+        "text": "If I Forget Thee Jerusalem"
+      },
+      {
+        "value": "12",
+        "text": "O Jerusalem!"
+      }
+    ],
+    "value": {
+      "1": true,
+      "2": true
+    }
+  },
+  {
+    "Id": "7",
+    "name": "question7",
+    "ControlType": "textarea",
+    "required": true,
+    "questioncode": "Q7",
+    "questiontext": "Tell me about your self?"
+  },
+  {
+    "Id": "8",
+    "name": "question8",
+    "ControlType": "datepicker",
+    "required": true,
+    "questioncode": "Q8",
+    "questiontext": "Applicant Date of Birth"
+  }
+
+]

@@ -1,0 +1,47 @@
+﻿<nav class="navbar navbar-custom">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Angular JS POC</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="topics">Home</a></li>
+            <li class="active"><a href="databinding">Data Binding</a></li>
+            <li class="active"><a href="events">Eventing in AngularJS</a></li>
+            <li class="active"><a href="myvalidations">Validations</a></li>
+            <li class="active"><a href="store">Filters</a></li>
+            <li class="active"><a href="inventory">Custom Directives</a></li>
+            <li class="active"><a href="questiontemplate">Questions Template</a></li>
+            <li class="active"><a href="store">Cart</a></li>
+        </ul>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ui-sref="page.register" href=""><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a ui-sref="page.default" href=""><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+
+    </div>
+</nav>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.navbar a.dropdown-toggle').on('mouseover', function (e) {
+            var $el = $(this);
+            var $parent = $(this).offsetParent(".dropdown-menu");
+            $(this).parent("li").toggleClass('open', 1000);
+            if (!$parent.parent().hasClass('nav')) {
+                $el.next().css({ "top": $el[0].offsetTop, "left": $parent.outerWidth() - 4 });
+            }
+            $('.nav li.open').not($(this).parents("li")).removeClass("open");
+            return false;
+        });
+    });
+</script>

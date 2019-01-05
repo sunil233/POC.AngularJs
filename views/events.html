@@ -1,0 +1,43 @@
+<div  ng-controller="EventsController as events">
+    <p>The ng-click directive defines AngularJS code that will be executed when the element is being clicked.</p>
+    <button ng-click="events.count = events.count + 1" class="btn btn-success">Click me!</button>
+    <p>{{ events.count }}</p>
+</div>
+
+<div>
+    <h3>Toggle, True/False</h3>
+    <p>If you want to show a section of HTML code when a button is clicked, and hide when the button is clicked again, like a dropdown menu, make the button behave like a toggle switch:</p>
+
+    <button ng-click="events.ShowDiv()" class="btn btn-success">Toggle Data</button>
+
+    <div ng-show="events.showMe">
+        <h1>Menu:</h1>
+        <div>Pizza</div>
+        <div>Pasta</div>
+        <div>Pesce</div>
+    </div>
+</div>
+
+<form ng-controller="validateCtrl" name="myForm" novalidate>
+
+    <p>
+        Username:<br>
+        <input type="text" name="user" ng-model="user" required>
+        <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+            <span ng-show="myForm.user.$error.required">Username is required.</span>
+        </span>
+    </p>
+
+    <p>
+        Email:<br>
+        <input type="email" name="email" ng-model="email" required>
+        <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+            <span ng-show="myForm.email.$error.required">Email is required.</span>
+            <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+        </span>
+    </p>
+
+    <p>
+        <input type="submit" ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  myForm.email.$dirty && myForm.email.$invalid">
+    </p>
+</form>

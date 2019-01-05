@@ -1,0 +1,138 @@
+﻿<div class="form-horizontal"  ng-controller="InventoryCtrl as ic" cg-busy="ic.Productspromise">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <h2>Custom Directives in Angular JS</h2>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <h4> Introducing Local Scope Properties</h4>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <div class="alert alert-success ng-scope">
+                    Directives that use isolate scope provide 3 different options to interact with the outside world.
+                    The 3 options are referred to as Local Scope Properties and can be defined using the @, =, and & characters
+                </div>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <h4>Attributes "@"</h4>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <div class="alert alert-success ng-scope">
+                    You can bind a isolated scope property to a DOM attribute. This sets up a one-way databinding from the parent scope to the isolated scope.
+                    If the parent scope changes, the isolated scope will reflect that change, but not the other way around.
+                    You wire this up using an <span class="pln">@</span> symbol in your scope property definition in the directive.
+                </div>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <h4>Bindings "="</h4>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <div class="alert alert-success ng-scope">
+                    Sets bidirectional binding between a local scope property and the parent scope property.
+                </div>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <h4> Expressions "&"</h4>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <div class="alert alert-success ng-scope">
+                    Provides a way to execute an expression in the context of the parent scope. The value passed to this attribute in the DOM is always expected to be a function or an expression
+                </div>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <hr />
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <inventory-products productscount="{{ic.productscount}}" productsdata="ic.products"></inventory-products>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>

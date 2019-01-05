@@ -1,0 +1,136 @@
+﻿<div class="form-horizontal" cg-busy="[cart.cartpromise]"  ng-controller="CartSummaryCtrl as cart">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <p>
+                    Thanks for shopping at the Angular Store.<br />
+                </p>
+                <p>
+                    <b> You have &nbsp;&nbsp;{{cart.items.length}} &nbsp;&nbsp; items in your Order</b>
+                </p>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <hr />
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <table class="table table-bordered">
+                    <!-- header -->
+                    <tr class="well">
+                        <td><b>Item</b></td>
+                        <td class="tdCenter"><b>Quantity</b></td>
+                        <td class="tdRight"><b>Price</b></td>
+                        <td class="tdRight"><b>Cost</b></td>
+                        <td />
+                    </tr>
+                    <!-- empty cart message -->
+                    <tr ng-if="cart.items.length < 1">
+                        <td class="tdCenter" colspan="5">
+                            Your cart is empty.
+                        </td>
+                    </tr>
+                    <!-- cart items -->
+                    <tr ng-repeat="item in cart.items track by $index | orderBy:'ProductName'">
+                        <td style="width:35%"> <img ng-src="../assets/img/products/{{item.ProductCode}}.jpg" alt="{{item.ProductName}}" /> {{item.ProductName}}</td>
+                        <td class="tdCenter" style="width:35%">
+                            <div class="input-append">
+                                <button class="btn btn-success" type="button"
+                                        ng-disabled="item.Quantity >= 1000"
+                                        ng-click="cart.addItem(item, 1,'add')">
+                                    +
+                                </button>
+
+                                <div class="col-xs-4">
+
+                                    <input class="form-control" ng-model="item.Quantity" />
+                                </div>
+                                <button class="btn btn-inverse" type="button"
+                                        ng-disabled="item.Quantity <= 1"
+                                        ng-click="cart.addItem(item, 1,'remove')">
+                                    -
+                                </button>
+                            </div>
+                        </td>
+                        <td class="tdRight" style="width:15%">{{item.Price | currency}}</td>
+                        <td class="tdRight" style="width:15%">{{item.Price * item.Quantity | currency}}</td>
+                        <td class="tdCenter" style="width:5%" title="remove from cart">
+                            <button type="button" class="btn btn btn-danger btn-sm" ng-click="cart.remove(item, $index)">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- footer -->
+                    <tr class="well">
+                        <td><b>Total</b></td>
+                        <td class="tdCenter"><b>{{cart.getTotalCount()}}</b></td>
+                        <td class="tdRight"></td>
+                        <td colspan="2"><b>{{cart.getTotalPrice() | currency}}</b></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <button type="submit" ng-click="cart.backtostore()" class="btn btn-primary pull-left">back to store</button>
+                <button type="submit" ng-click="cart.Proceed()" class="btn btn-success pull-right">proceed</button>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>

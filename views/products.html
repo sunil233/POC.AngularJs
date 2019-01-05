@@ -1,0 +1,107 @@
+<div class="form-horizontal" ng-controller="ProductsController as pc" cg-busy="pc.Productspromise">
+    <div class="container-fluid">
+        <form role="form" name="pc.ProductsForm" novalidate ng-submit="submitForm(userForm.$valid)" class="form-validate">
+            <br />
+            <div class="form-group" ng-class="{ 'has-error' : pc.ProductsForm.ProductName.$dirty &&  pc.ProductsForm.ProductName.$error.required}">
+                <label class="control-label col-sm-2">Product Name:</label>
+                <div class="col-sm-6">
+                    <input type="text" name="ProductName" placeholder="Enter Product Name" autocomplete="off" ng-model="pc.ProductName" ng-required="true" class="form-control">
+                    <p ng-show="pc.ProductsForm.ProductName.$dirty && pc.ProductsForm.ProductName.$error.required" class="text-danger">Product Name is required.</p>
+                </div>
+                <div class="col-sm-6">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : pc.ProductsForm.ProductCode.$dirty &&  pc.ProductsForm.ProductCode.$error.required}">
+                <label class="control-label col-sm-2">Product Code:</label>
+                <div class="col-sm-6">
+                    <input type="text" name="ProductCode" placeholder="Enter Name" ng-model="pc.ProductCode" ng-required="true" class="form-control">
+                    <p ng-show="pc.ProductsForm.ProductCode.$dirty && pc.ProductsForm.ProductCode.$error.required" class="text-danger">Product Code is required.</p>
+                </div>
+                <div class="col-sm-6">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : pc.ProductsForm.txtPrice.$dirty &&  pc.ProductsForm.txtPrice.$error.required}">
+                <label class="control-label col-sm-2">Price:</label>
+                <div class="col-sm-6">
+                    <input type="number" name="txtPrice" placeholder="Enter Price" ng-model="pc.Price" ng-required="true" class="form-control">
+                    <p ng-show="pc.ProductsForm.txtPrice.$dirty && pc.ProductsForm.txtPrice.$error.required" class="text-danger">Price is required.</p>
+                </div>
+                <div class="col-sm-6">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : pc.ProductsForm.txtQuantity.$dirty &&  pc.ProductsForm.txtQuantity.$error.required}">
+                <label class="control-label col-sm-2">Quantity:</label>
+                <div class="col-sm-6">
+                    <input type="number" name="txtQuantity" placeholder="Enter Quantity" ng-model="pc.Quantity" ng-required="true" class="form-control">
+                    <p ng-show="pc.ProductsForm.txtQuantity.$dirty && pc.ProductsForm.txtQuantity.$error.required" class="text-danger">Quantity is required.</p>
+                </div>
+                <div class="col-sm-6">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-11">
+                    <input type="Button" value="Add to list" ng-click="pc.addProduct()" class="btn btn-success" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-10">
+                    <div style="padding-top: 15px;">
+                        <table border="1" class="mytable">
+                            <tr>
+                                <td>Product Name</td>
+                                <td>Product Code</td>
+                                <td>Price</td>
+                                <td>Quantity</td>
+                                <td>Total Price</td>
+                                <td>Action</td>
+                            </tr>
+                            <tr ng-repeat="item in pc.products">
+                                <td>
+                                    <span ng-hide="item.editMode">{{item.ProductName}}</span>
+                                    <input type="text" class="form-control" ng-show="item.editMode" ng-model="item.ProductName" />
+                                </td>
+                                <td>
+                                    <span ng-hide="item.editMode">{{item.ProductCode}}</span>
+                                    <input type="text" class="form-control" ng-show="item.editMode" ng-model="item.ProductCode" />
+                                </td>
+                                <td>
+                                    <span ng-hide="item.editMode">{{item.Price}}</span>
+                                    <input type="number" class="form-control" ng-show="item.editMode" ng-model="item.Price" />
+                                </td>
+                                <td>
+                                    <span ng-hide="item.editMode">{{item.Quantity}}</span>
+                                    <input type="number" class="form-control" ng-show="item.editMode" ng-model="item.Quantity" />
+                                </td>
+                                <td>{{(item.Quantity) * (item.Price)}}</td>
+                                <td>
+                                    <span>
+                                        <button type="submit" ng-hide="item.editMode" ng-click="item.editMode = true; pc.editProduct(item)" class="btn btn-primary">Edit</button>
+                                    </span>
+                                    <span>
+                                        <button type="submit" ng-show="item.editMode" ng-click="item.editMode = false" class="btn btn-success">Save</button>
+                                    </span>
+                                    <span>
+                                        <input type="button" value="Delete" ng-click="pc.removeProduct($index)" class="btn btn-danger" />
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br />
+                    <div style="font-weight: bold">Grand Total: {{pc.totalPrice()}}</div>
+                    <br />
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

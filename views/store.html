@@ -1,0 +1,110 @@
+﻿<div class="form-horizontal"  ng-controller="StoreCtrl as store" cg-busy="store.storepromise">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <b>My Store</b>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <p>
+                    <input ng-model="search" class="form-control" placeholder="Search">
+                </p>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                <table class="table table-bordered">
+                    <tr class="well">
+                        <td class="tdRight" colspan="4">
+                            <a href="default.htm#/cart" title="go to shopping cart" ng-disabled="store.getTotalCount() < 1">
+                                <i class="icon-shopping-cart" />
+                                <b>{{store.getTotalCount()}}</b> items, <b>{{store.getTotalPrice() | currency}}</b>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr ng-repeat="product in filterData = (store.products | orderBy:'ProductName'| filter:search) | limitTo:store.pageSize:1*(store.currentPage-1)">
+                        <td class="tdCenter"><img ng-src="../assets/img/products/{{product.ProductCode}}.jpg" alt="{{product.ProductName}}" /></td>
+                        <td>
+                            <a href="#/products/{{product.ProductCode}}"><b>{{product.ProductName}}</b></a><br />
+                            {{product.Description}}
+                        </td>
+                        <td class="tdRight">
+                            {{product.Price | currency}}
+                        </td>
+                        <td class="tdCenter">
+                            <a href="" ng-click="store.addItem(product, 1)">
+                                <img src="../assets/img/addtocart.png" />
+                            </a>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-6">
+                <ul uib-pagination boundary-links="true"
+                    total-items="store.products.length"
+                    items-per-page="store.pageSize"
+                    ng-model="store.currentPage"
+                    class="pagination-sm"
+                    previous-text="&lsaquo;"
+                    next-text="&rsaquo;"
+                    first-text="&laquo;"
+                    last-text="&raquo;"
+                    ng-if="store.products.length> 0"></ul>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" ng-click="store.checkout()" class="btn btn-primary pull-right">Check Out</button>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-8">
+                Reference:https://www.codeproject.com/Articles/576246/%2FArticles%2F576246%2FA-Shopping-Cart-Application-Built-with-AngularJS
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+
